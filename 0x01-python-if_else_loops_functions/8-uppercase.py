@@ -9,7 +9,7 @@ def uppercase(str):
         str: string to be printed in uppercase
     """
     for char in str:
-        if ord(char) in range(97, 123):
+        if ord(char) >= 97 and ord(char) <= 122:
             char = chr(ord(char) - 32)
         print("{}".format(char), end="")
     print()
