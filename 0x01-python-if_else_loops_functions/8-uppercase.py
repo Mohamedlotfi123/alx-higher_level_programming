@@ -21,5 +21,5 @@ def uppercase(str):
             # if not lower don't change anything
             x = ord(i)
 
-        #print("{}".format(chr(x)), end="")
-    print()
+        print("{}".format(chr(x)), end="")
+    #print()
