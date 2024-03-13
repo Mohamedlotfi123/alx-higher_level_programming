@@ -8,14 +8,11 @@ def uppercase(str):
     Args:
         str: string to be printed in uppercase
     """
-    for i in str:
+    for char in str:
         # Check if the character is lower
-        if ord(i) in range(97, 123):
+        if ord(char) in range(97, 123):
             # convert it to upper:
             # "the difference between upper and lower in ASCII is 32"
-            x = ord(i) - 32
-        else:
-            # if not lower don't change anything
-            x = ord(i)
-        print("{}".format(chr(x)), end="")
+            char = chr(ord(char) - 32)
+        print("{}".format(char), end="")
     print()
