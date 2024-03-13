@@ -14,5 +14,5 @@ def uppercase(str):
             # convert it to upper:
             # "the difference between upper and lower in ASCII is 32"
             #char = chr(ord(char) - 32)
-        print("{}".format(char), end="")
+        #print("{}".format(char), end="")
     print()
