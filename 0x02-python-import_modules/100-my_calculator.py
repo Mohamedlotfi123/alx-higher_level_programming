@@ -6,7 +6,6 @@ from calculator_1 import add, sub, mul, div
 def main():
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        print(len(argv))
         exit(1)
     else:
         if argv[2] == "+":
