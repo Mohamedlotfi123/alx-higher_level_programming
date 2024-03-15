@@ -9,7 +9,7 @@ def main():
         if len(argv) == 2:
             print("1 argument:")
         else:
-            print("{} arguments:".format(len(argv)))
+            print("{} arguments:".format(len(argv) - 1))
         i = 1
         while i < len(argv):
             print("{}: {}".format(i, argv[i]))
