@@ -15,8 +15,8 @@ def new_in_list(my_list, idx, element):
         modified list or,
         copy of the original list if idx is negative or out of range.
     """
-    if idx < 0 or idx >= len(my_list):
-        return my_list[:]
     new_list = my_list[:]
+    if idx < 0 or idx >= len(my_list):
+        return new_list
     new_list[idx] = element
     return new_list
