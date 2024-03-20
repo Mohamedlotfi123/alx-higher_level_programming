@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def search_replace(my_list, search, repalce):
+def search_replace(my_list, search, replace):
     """
     function that replace all occurrences of an element by
     another in a new list.
