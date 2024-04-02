@@ -18,3 +18,4 @@ def safe_print_integer_err(value):
         return True
     except ValueError as v:
         print("Exception:", v, file=sys.stderr)
+        return False
