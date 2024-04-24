@@ -55,4 +55,4 @@ class Student:
                   values is new value for the attribute.
         """
         for key in json:
-            self.key = json[key]
+            self.__dict__[key] = json[key]
