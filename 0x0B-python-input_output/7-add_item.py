@@ -7,9 +7,9 @@ import sys
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-l = list()
+my_list = list()
 for item in load_from_json_file("add_item.json"):
-    l.append(item)
+    my_list.append(item)
 for arg in sys.argv[1:]:
-    l.append(arg)
+    my_list.append(arg)
 save_to_json_file(l, "add_item.json")
