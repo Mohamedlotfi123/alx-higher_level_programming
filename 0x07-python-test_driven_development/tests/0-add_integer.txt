@@ -26,14 +26,14 @@ test missing one argument:
 >>> add_integer(8, )
 106
 
->>> add_integer(, 5)
+add_integer(, 5)
 Traceback (most recent call last):
 	...
 TypeError: a must be an integer
 
 test missing two argument:
 
->>> add_integer()
+add_integer()
 Traceback (most recent call last):
 	...
 TypeError: a must be an integer
