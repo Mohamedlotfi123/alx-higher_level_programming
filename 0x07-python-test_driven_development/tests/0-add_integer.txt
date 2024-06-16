@@ -1,0 +1,71 @@
+doctest for add_integer function "function that add two integers":
+
+first import the function:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+test positive and negative values:
+
+>>> add_integer(3, 5)
+8
+
+>>> add_integer(394, 806)
+1200
+
+>>> add_integer(-35, 5)
+-30
+
+>>> add_integer(49, -34)
+15
+
+>>> add_integer(-48, -25)
+-73
+
+test float numbers:
+
+>>> add_integer(4.9, 4)
+8
+
+>>> add_integer(-5.3, 5)
+0
+
+>>> add_integer(345.29, -348)
+-3
+
+>>> add_integer(4.39, 49.8)
+53
+
+>>> add_integer(-4.58, 5.94)
+1
+
+test non integeres:
+
+>>> add_integer(4, 4j)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(4j, 8)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+>>> add_integer(True, 4)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+>>> add_integer(4, False)
+Traceback (most recent call last):
+        ...
+TypeError: b must be an integer
+
+>>> add_integer("4", 4)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+>>> add_integer(4, "4j")
+Traceback (most recent call last):
+        ...
+TypeError: b must be an integer
