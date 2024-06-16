@@ -21,6 +21,23 @@ test positive and negative values:
 >>> add_integer(-48, -25)
 -73
 
+test missing one argument:
+
+>>> add_integer(8, )
+106
+
+>>> add_integer(, 5)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+test missing two argument:
+
+>>> add_integer()
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
 test float numbers:
 
 >>> add_integer(4.9, 4)
