@@ -1,0 +1,28 @@
+doctest for the say_my_name function:
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test with random names:
+
+>>> say_my_name("Mohamed", "lotfi")
+My name is Mohamed lotfi
+
+>>> say_my_name("Mohamed",)
+My name is Mohamed 
+
+test with non string:
+
+>>> say_my_name(False, "Sayed")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name(["Mohamed"], "Sayed")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+>>> say_my_name("False", 4)
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
