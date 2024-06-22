@@ -1,0 +1,40 @@
+doctest for the text_indentation function:
+
+first import the function:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+test with string:
+
+>>> text_indentation("What's your name ? Mohamed")
+What's your name ?
+<BLANKLINE>
+Mohamed
+
+>>> text_indentation("My name is mohamed, and i'm working with my uncle")
+My name is mohamed, and i'm working with my uncle
+
+>>> text_indentation("M ?   L : M.") #doctest: +REPORT_NDIFF
+M ?
+<BLANKLINE>
+L :
+<BLANKLINE>
+M.
+<BLANKLINE>
+
+Test with non string:
+
+>>> text_indentation(True)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(453)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
+
+>>> text_indentation(["Mohamed lotfi"])
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
