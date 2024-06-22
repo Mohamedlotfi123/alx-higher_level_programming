@@ -17,10 +17,10 @@ def text_indentation(text):
     n_line = 0
     for char in text:
         if char in [".", ":", "?"]:
-            print(char, "\n")
+            print(char)
             n_line = 1
         elif n_line == 1 and char == " ":
             continue
         else:
-            print(char, end="")
             n_line = 0
+            print(char, end="")

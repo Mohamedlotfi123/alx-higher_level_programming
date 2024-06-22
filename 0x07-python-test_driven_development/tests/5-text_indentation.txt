@@ -14,7 +14,7 @@ Mohamed
 >>> text_indentation("My name is mohamed, and i'm working with my uncle")
 My name is mohamed, and i'm working with my uncle
 
->>> text_indentation("M ?   L : M.") #doctest: +REPORT_NDIFF
+>>> text_indentation("M ?   L : M.") #doctest: +NORMALIZE_WHITESPACE
 M ?
 <BLANKLINE>
 L :
