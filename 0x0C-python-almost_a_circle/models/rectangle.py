@@ -30,10 +30,10 @@ class Rectangle(base.Base):
             id: id of the instance
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -47,6 +47,10 @@ class Rectangle(base.Base):
         """
         Setter for private attribute height
         """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @property
@@ -61,6 +65,10 @@ class Rectangle(base.Base):
         """
         Setter for private attribute height
         """
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        elif height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
@@ -75,6 +83,10 @@ class Rectangle(base.Base):
         """
         Setter for private attribute x
         """
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @property
@@ -89,4 +101,8 @@ class Rectangle(base.Base):
         """
         Setter for private attraibute y
         """
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
