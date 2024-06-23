@@ -14,9 +14,10 @@ class Rectangle(base.Base):
             __x: ...
             __y: ...
     Methods:
+        __init__: initialization method
         Getter: for each attribute
         Setter: for eack attribute
-        __init__: initialization method
+        area: return the area of the rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -106,3 +107,9 @@ class Rectangle(base.Base):
         elif y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        """
+        function return the area of a rectangle
+        """
+        return self.__width * self.__height
