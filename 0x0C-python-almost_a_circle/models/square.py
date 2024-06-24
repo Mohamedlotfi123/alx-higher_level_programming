@@ -18,6 +18,7 @@ class Square(rectangle.Rectangle):
         __init__: initialization method.
         __str__: print [Square] (<id>) <x>/<y> - <size>
         update: change attributes values
+        to_dictionarty: returns dictionary representation for the square
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
@@ -75,3 +76,14 @@ class Square(rectangle.Rectangle):
         if len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        function returns dictionary representation for the square
+        """
+        return {
+                "id": self.id,
+                "x": self.x,
+                "size": self.size,
+                "y": self.y
+                }
