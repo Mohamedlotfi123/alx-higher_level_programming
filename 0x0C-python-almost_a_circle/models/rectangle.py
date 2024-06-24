@@ -19,6 +19,8 @@ class Rectangle(base.Base):
         Setter: for eack attribute
         area: return the area of the rectangle
         display: prints the rectangle
+        __str__: print [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        update: update the attributes values
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -132,3 +134,15 @@ class Rectangle(base.Base):
         """
         to_print = f"({self.id}) {self.x}/{self.y}"
         return f"[Rectangle] {to_print} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        """
+        update the attribute values.
+
+        Args:
+            *arg: attributes values.
+        """
+        attr_list = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if i < 5:
+                setattr(self, attr_list[i], arg)
