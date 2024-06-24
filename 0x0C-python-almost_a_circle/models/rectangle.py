@@ -135,7 +135,7 @@ class Rectangle(base.Base):
         to_print = f"({self.id}) {self.x}/{self.y}"
         return f"[Rectangle] {to_print} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         update the attribute values.
 
@@ -146,3 +146,6 @@ class Rectangle(base.Base):
         for i, arg in enumerate(args):
             if i < 5:
                 setattr(self, attr_list[i], arg)
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
