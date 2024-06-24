@@ -21,6 +21,7 @@ class Rectangle(base.Base):
         display: prints the rectangle
         __str__: print [Rectangle] (<id>) <x>/<y> - <width>/<height>
         update: update the attributes values
+        to_dictionary: dictionary representation of a Rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -149,3 +150,15 @@ class Rectangle(base.Base):
         if len(args) == 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        function returns dictionary representation of a Rectangle
+        """
+        return {
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
+                }
