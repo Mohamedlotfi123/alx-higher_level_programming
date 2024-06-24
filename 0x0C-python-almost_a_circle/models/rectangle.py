@@ -18,6 +18,7 @@ class Rectangle(base.Base):
         Getter: for each attribute
         Setter: for eack attribute
         area: return the area of the rectangle
+        display: prints the rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -113,3 +114,12 @@ class Rectangle(base.Base):
         function return the area of a rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        function prints the rectangle using #
+        """
+        for _ in range(self.__height):
+            for _ in range(self.width):
+                print("#", end="")
+            print("")
