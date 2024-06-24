@@ -128,5 +128,5 @@ class Rectangle(base.Base):
         """
         function returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        to_print = f"({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-        return f"[Rectangle] {to_print}"
+        to_print = f"({self.id}) {self.x}/{self.y}"
+        return f"[Rectangle] {to_print} - {self.width}/{self.height}"
