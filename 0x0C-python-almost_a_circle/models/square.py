@@ -17,6 +17,7 @@ class Square(rectangle.Rectangle):
     Methods:
         __init__: initialization method.
         __str__: print [Square] (<id>) <x>/<y> - <size>
+        update: change attributes values
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
@@ -59,3 +60,18 @@ class Square(rectangle.Rectangle):
         else:
             self.width = size
             self.height = size
+
+    def update(self, *args, **kwargs):
+        """
+        function update the attributes values.
+
+        Args:
+            *args: list of arguments - no-keyworded arguments
+            **kwargs: list of arguments - keyworded arguments
+        """
+        attr_list = ["id", "size", "x", "y"]
+        for i, arg in enumerate(args):
+            setattr(self, attr_list[i], arg)
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
