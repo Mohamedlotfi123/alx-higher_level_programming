@@ -119,7 +119,9 @@ class Rectangle(base.Base):
         """
         function prints the rectangle using #
         """
+        print(self.y * "\n", end="")
         for _ in range(self.__height):
+            print(self.x * " ", end="")
             for _ in range(self.width):
                 print("#", end="")
             print("")
