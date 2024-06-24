@@ -36,3 +36,26 @@ class Square(rectangle.Rectangle):
         """
         to_print = f"({self.id}) {self.x}/{self.y} - {self.width}"
         return f"[Square] {to_print}"
+
+    @property
+    def size(self):
+        """
+        Getter for size attribute.
+
+        Return:
+            size attribute value.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """
+        Setter for size attribute.
+        """
+        if type(size) is not int:
+            raise TypeError("width must be an integer")
+        elif size <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.width = size
+            self.height = size
