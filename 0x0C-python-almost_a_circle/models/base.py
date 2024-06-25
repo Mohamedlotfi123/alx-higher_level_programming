@@ -101,8 +101,11 @@ class Base():
         function that returns a list of instaces.
         """
         obj_list = list()
-        with open(f"{cls.__name__}.json", "r") as f:
-            json_string = f.read()
+        try:
+            with open(f"{cls.__name__}.json", "r") as f:
+                json_string = f.read()
+        except FileNotFoundError:
+            return obj_list
         dict_list = cls.from_json_string(json_string)
         for dic in dict_list:
             instance = cls.create(**dic)
