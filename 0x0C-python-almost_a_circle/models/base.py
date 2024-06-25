@@ -62,3 +62,20 @@ class Base():
         json_format = cls.to_json_string(dict_list)
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(json_format)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        function returns list of the JSON string representation
+
+        Args:
+            json_string: string representation list of dictionries.
+
+        Return:
+            list of dictionaries, or empty list if
+                json_string is None
+        """
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
