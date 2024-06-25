@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base Class """
 import json
+import csv
 
 
 class Base():
@@ -111,3 +112,44 @@ class Base():
             instance = cls.create(**dic)
             obj_list.append(instance)
         return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        function that serializes in CSV
+
+        Args:
+            list_objs: list of objects
+        """
+        dict_list = list()
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_dict = obj.to_dictionary()
+                dict_list.append(obj_dict.values())
+        with open(f"{cls.__name__}.csv", "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerows(dict_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        function deserializes from CSV.
+        """
+        list_obj = list()
+        try:
+            with open(f"{cls.__name__}.csv", "r") as f:
+                reader = csv.reader(f)
+                values_list = list(reader)
+        except FileNotFoundError:
+            return list_obj
+        for values in values_list:
+            if cls.__name__ == "Rectangle":
+                attr_list = ["id", "__width", "__height", "__x", "__y"]
+                instance = cls(1, 1)
+            else:
+                attr_list = ["id", "__size", "__x", "__y"]
+                instance = cls(1)
+            for i, value in enumerate(values):
+                setattr(instance, attr_list[i], value)
+            list_obj.append(instance)
+        return list_obj
