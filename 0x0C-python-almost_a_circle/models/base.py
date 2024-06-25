@@ -88,6 +88,6 @@ class Base():
         Args:
             dictionary: dictionary with attributes values.
         """
-        instance = cls(1, 1, 1)
+        instance = cls(1, 1, 1, 1)
         instance.update(**dictionary)
         return instance
