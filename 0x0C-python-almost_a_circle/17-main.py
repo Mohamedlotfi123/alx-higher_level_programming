@@ -1,13 +1,36 @@
 #!/usr/bin/python3
-""" 17-main """
+""" Check """
 from models.rectangle import Rectangle
 
-if __name__ == "__main__":
+input_dict = { 'width': 2, 'height': 3 }
+new_rect = Rectangle.create(**input_dict)
 
-    r1 = Rectangle(3, 5, 1)
-    r1_dictionary = r1.to_dictionary()
-    r2 = Rectangle.create(**r1_dictionary)
-    print(r1)
-    print(r2)
-    print(r1 is r2)
-    print(r1 == r2)
+if new_rect is None:
+    print("Rectangle.create doesn't create a new Rectangle")
+    exit(1)
+
+if type(new_rect) is not Rectangle:
+    print("Rectangle.create doesn't create a new Rectangle: {}".format(new_rect))
+    exit(1)
+
+if new_rect.id != input_dict.get('id', 1):
+    print("New Rectangle doesn't have the right ID: {}".format(new_rect.id))
+    exit(1)
+
+if new_rect.width != input_dict['width']:
+    print("New Rectangle doesn't have the right width: {}".format(new_rect.width))
+    exit(1)
+
+if new_rect.height != input_dict['height']:
+    print("New Rectangle doesn't have the right height: {}".format(new_rect.height))
+    exit(1)
+
+if new_rect.x != input_dict.get('x', 0):
+    print("New Rectangle doesn't have the right x: {}".format(new_rect.x))
+    exit(1)
+
+if new_rect.y != input_dict.get('y', 0):
+    print("New Rectangle doesn't have the right y: {}".format(new_rect.y))
+    exit(1)
+
+print("OK", end="")
