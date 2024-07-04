@@ -1,2 +1,2 @@
 -- lists all databases of your MYSQL server
-SELECT *
+SELECT * FROM sys.databases
